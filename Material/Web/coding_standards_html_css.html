@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>
+      Guia de Código do @mdo
+    </title>
+
+<style>
+/*
+ * Fonts
+ */
+
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello.eot');
+  src: url('font/fontello.eot#iefix') format('embedded-opentype'),
+       url('font/fontello.woff') format('woff'),
+       url('font/fontello.ttf') format('truetype'),
+       url('font/fontello.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.icon-github-circled:before { content: '\e800'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+
+
+/*
+ * Scaffolding and type
+ */
+
+html {
+  font-size: 16px;
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  margin: 0;
+  font: 1rem/1.5 "PT Sans", sans-serif;
+  color: #5a5a5a;
+}
+
+a {
+  color: #08c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 .5rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #2a2a2a;
+  letter-spacing: -.05em;
+}
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem }
+
+p {
+  margin: 0 0 1rem;
+}
+.lead {
+  font-size: 1.3rem;
+}
+
+blockquote {
+  position: relative;
+  margin: 0 1rem 1rem;
+  font-style: italic;
+  color: #7a7a7a;
+}
+blockquote p {
+  margin-bottom: 0;
+}
+
+ul li {
+  margin-bottom: .25rem;
+}
+
+/* Tighten up margin on last items */
+p:last-child,
+ul:last-child,
+blockquote:last-child{
+  margin-bottom: 0;
+}
+
+
+
+/*
+ * Code
+ */
+
+code,
+pre {
+  font-family: "PT Mono", Menlo, "Courier New", monospace;
+  font-size: 95%;
+}
+code {
+  padding: 2px 4px;
+  font-size: 85%;
+  color: #d44950;
+  background-color: #f7f7f9;
+  border-radius: .2rem;
+}
+
+pre {
+  display: block;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+.highlight {
+  margin: 0;
+}
+.highlight pre {
+  margin-bottom: 0;
+}
+.highlight + .highlight {
+  margin-top: 1rem;
+}
+
+
+/*
+ * The Grid
+ */
+
+.col {
+  padding: 2rem 1rem;
+}
+.col p {
+  max-width: 40rem;
+}
+.col + .col {
+  border-top: 1px solid #dfe1e8;
+  background-color: #f7f7f9;
+}
+@media (min-width: 38em) {
+  .col {
+    padding: 2rem;
+  }
+}
+@media (min-width: 48em) {
+  .section {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .col {
+    display: table-cell;
+    padding: 3rem;
+    vertical-align: top;
+  }
+  .col + .col {
+    border-top: 0;
+  }
+}
+
+/* Make the ToC a whole section */
+.toc .col + .col {
+  background-color: #fff;
+}
+
+
+/*
+ * Masthead
+ */
+
+.masthead {
+  padding: 3rem 1rem;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  background-color: #2a3440;
+}
+.masthead h1 {
+  color: #fff;
+  margin-bottom: .25rem;
+}
+.masthead .icon {
+  display: inline-block;
+  font-size: 3rem;
+  margin: 0 .5rem;
+}
+.masthead-links {
+  font-size: 2rem;
+}
+.masthead-links a {
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  transition: all .15s linear;
+}
+.masthead-links a:hover {
+  color: #fff;
+}
+
+@media (min-width: 38em) {
+  .masthead {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+
+/*
+ * Sections
+ */
+
+.heading {
+  padding: 2rem 1rem 1.5rem;
+  background-color: #dfe1e8;
+}
+
+@media (min-width: 38em) {
+  .heading {
+    padding: 3rem 3rem 2.5rem;
+  }
+}
+
+.section {
+  border-bottom: 1px solid #dfe1e8;
+}
+
+
+/*
+ * Footer
+ */
+
+.footer {
+  padding: 3rem 1rem;
+  font-size: 90%;
+  text-align: center;
+}
+.footer p {
+  margin-bottom: .5rem;
+}
+
+.quick-links {
+  list-style: none;
+  margin-left: 0;
+}
+.quick-links li {
+  display: inline;
+}
+
+
+/*
+ * Syntax highlighting
+ */
+
+.hll { background-color: #ffffcc }
+ /*{ background: #f0f3f3; }*/
+.c { color: #999; } /* Comment */
+.err { color: #AA0000; background-color: #FFAAAA } /* Error */
+.k { color: #006699; } /* Keyword */
+.o { color: #555555 } /* Operator */
+.cm { color: #999; } /* Comment.Multiline */ /* Edited to remove italics and make into comment */
+.cp { color: #009999 } /* Comment.Preproc */
+.c1 { color: #999; } /* Comment.Single */
+.cs { color: #999; } /* Comment.Special */
+.gd { background-color: #FFCCCC; border: 1px solid #CC0000 } /* Generic.Deleted */
+.ge { font-style: italic } /* Generic.Emph */
+.gr { color: #FF0000 } /* Generic.Error */
+.gh { color: #003300; } /* Generic.Heading */
+.gi { background-color: #CCFFCC; border: 1px solid #00CC00 } /* Generic.Inserted */
+.go { color: #AAAAAA } /* Generic.Output */
+.gp { color: #000099; } /* Generic.Prompt */
+.gs { } /* Generic.Strong */
+.gu { color: #003300; } /* Generic.Subheading */
+.gt { color: #99CC66 } /* Generic.Traceback */
+.kc { color: #006699; } /* Keyword.Constant */
+.kd { color: #006699; } /* Keyword.Declaration */
+.kn { color: #006699; } /* Keyword.Namespace */
+.kp { color: #006699 } /* Keyword.Pseudo */
+.kr { color: #006699; } /* Keyword.Reserved */
+.kt { color: #007788; } /* Keyword.Type */
+.m { color: #FF6600 } /* Literal.Number */
+.s { color: #d44950 } /* Literal.String */
+.na { color: #4f9fcf } /* Name.Attribute */
+.nb { color: #336666 } /* Name.Builtin */
+.nc { color: #00AA88; } /* Name.Class */
+.no { color: #336600 } /* Name.Constant */
+.nd { color: #9999FF } /* Name.Decorator */
+.ni { color: #999999; } /* Name.Entity */
+.ne { color: #CC0000; } /* Name.Exception */
+.nf { color: #CC00FF } /* Name.Function */
+.nl { color: #9999FF } /* Name.Label */
+.nn { color: #00CCFF; } /* Name.Namespace */
+.nt { color: #2f6f9f; } /* Name.Tag */
+.nv { color: #003333 } /* Name.Variable */
+.ow { color: #000000; } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mf { color: #FF6600 } /* Literal.Number.Float */
+.mh { color: #FF6600 } /* Literal.Number.Hex */
+.mi { color: #FF6600 } /* Literal.Number.Integer */
+.mo { color: #FF6600 } /* Literal.Number.Oct */
+.sb { color: #CC3300 } /* Literal.String.Backtick */
+.sc { color: #CC3300 } /* Literal.String.Char */
+.sd { color: #CC3300; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #CC3300 } /* Literal.String.Double */
+.se { color: #CC3300; } /* Literal.String.Escape */
+.sh { color: #CC3300 } /* Literal.String.Heredoc */
+.si { color: #AA0000 } /* Literal.String.Interpol */
+.sx { color: #CC3300 } /* Literal.String.Other */
+.sr { color: #33AAAA } /* Literal.String.Regex */
+.s1 { color: #CC3300 } /* Literal.String.Single */
+.ss { color: #FFCC33 } /* Literal.String.Symbol */
+.bp { color: #336666 } /* Name.Builtin.Pseudo */
+.vc { color: #003333 } /* Name.Variable.Class */
+.vg { color: #003333 } /* Name.Variable.Global */
+.vi { color: #003333 } /* Name.Variable.Instance */
+.il { color: #FF6600 } /* Literal.Number.Integer.Long */
+
+.css .o,
+.css .o + .nt,
+.css .nt + .nt { color: #999; }
+
+/* Ads
+-------------------------------------------------- */
+
+#fusionads {
+  display: block;
+  max-width: 18rem;
+  padding: 1rem;
+  margin: 0 auto;
+  overflow: hidden; /* clearfix */
+  font-size: .8rem;
+  line-height: 1.3;
+  text-align: left;
+  background-color: rgba(0,0,0,.2);
+}
+.fusion-text,
+.fusion-poweredby {
+  display: block;
+  color: #fff;
+}
+.fusion-text:hover,
+.fusion-poweredby:hover {
+  text-decoration: none;
+}
+.fusion-img {
+  float: left;
+  margin-right: 1rem;
+}
+.fusion-poweredby {
+  display: block !important;
+  margin-top: .5rem;
+}
+
+@media (min-width: 40em) {
+  #fusionads {
+    max-width: 16rem;
+    font-size: .7rem;
+  }
+}
+
+</style>
+
+</head>
+  <body>
+
+    <header class="masthead">
+  <div class="container">
+    <h1>Guia de Código do @mdo</h1>
+    <p class="lead">Padrões para desenvolver código HTML e CSS flexíveis, duráveis e sustentáveis.</p>
+  </div>
+</header>
+
+
+    <div class="heading" id="toc">
+  <h2>Índice</h2>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="http://diegoeis.github.io/code-guide/#html">HTML</a></h4>
+    <ul>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-syntax">Sintaxe</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-doctype">Doctype do HTML5</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-encoding">Encoding de caractéres</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-style-script">Inserindo CSS e JavaScript</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-practicality">Praticidade em vez de pureza</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-attribute-order">Ordem dos Atributos</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-boolean-attributes">Atributos booleanos</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-reducing-markup">Reduzindo o markup</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#html-javascript">Código gerado por JavaScript</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4><a href="http://diegoeis.github.io/code-guide/#css">CSS</a></h4>
+    <ul>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-syntax">Sintaxe do CSS</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-declaration-order">Ordem das declarações</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-media-queries">Onde colocar as Media Queries</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-prefixed-properties">Propriedades com prefixo</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-single-declarations">Declarações únicas</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-shorthand">Propriedades resumidas</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-nesting">Aninhamento (nesting) no LESS e SASS</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-comments">Comentários</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-classes">Nomes de classes</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-selectors">Seletores</a></li>
+      <li><a href="http://diegoeis.github.io/code-guide/#css-organization">Organização</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="section" id="golden-rule">
+  <div class="col">
+    <h2>Regra de ouro</h2>
+    <p>Reforce isso, concordando com estas guidelines todas as vezes. Pequenos ou grandes, mostre o que está incorreto. Para adições ou contribuições para este Guia de Código, por favor <a href="https://github.com/mdo/code-guide">abra uma Issue no Github</a>.</p>
+  </div>
+  <div class="col">
+    <blockquote>
+      <p>Toda linha de código deve parecer que foi escrita por uma única pessoa, não importa a quantidade de contribuidores.</p>
+    </blockquote>
+  </div>
+</div>
+
+<div class="heading" id="html">
+  <h2>HTML</h2>
+</div>
+
+<div class="section" id="html-syntax">
+  <div class="col">
+    <h3>Sintaxe do HTML</h3>
+    <ul>
+      <li>Use soft-tabs com dois espaços.</li>
+      <li>Elementos aninhados devem estar identados uma vez (2 espaços).</li>
+      <li>Sempre use aspas duplas, nunca aspas simples.</li>
+      <li>Nunca inclua uma barra invertida nos elementos viúvos (exemplo: <code>&lt;img&gt;</code> ou <code>&lt;hr&gt;</code>).</li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/company-logo.png"</span> <span class="na">alt=</span><span class="s">"Company"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"hello-world"</span><span class="nt">&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-doctype">
+  <div class="col">
+    <h3>Doctype do HTML5</h3>
+    <p>Reforce os padrões com este simples doctype no início de todas as páginas HTML.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-encoding">
+  <div class="col">
+    <h3>Encoding de caractéres</h3>
+    <p>Assegure-se rapidamente a renderização do seu conteúdo declarando o encoding de caractéres explicitamente.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-style-script">
+  <div class="col">
+    <h3>Inserindo CSS e JavaScript</h3>
+    <p>De acordo com as especificações do HTML5, não há necessidade de especificar um atributo <code>type</code> quando incluímos arquivos de CSS e JavaScript como <code>text/css</code> e <code>text/javascript</code>.</p>
+    <h4>Links para especificação do HTML5</h4>
+    <ul>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Usando link</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Usando style</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Usando scripts</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- External CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"code-guide.css"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- In-document CSS --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+  <span class="c">/* ... */</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- JavaScript --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"code-guide.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-practicality">
+  <div class="col">
+    <h3>Praticidade em vez de pureza</h3>
+    <p>Esforce-se para manter o padrão e a semântica do HTML, mas não às custas da praticidade. Use o mínimo de código com a menor complexidade possível.</p>
+  </div>
+</div>
+
+<div class="section" id="html-attribute-order">
+  <div class="col">
+    <h3>Ordem dos atributos</h3>
+    <p>Atributos HTML devem usar esta ordem em particular para facilitar a leitura do código.</p>
+    <ul>
+      <li><code>class</code></li>
+      <li><code>id</code></li>
+      <li><code>data-*</code></li>
+      <li><code>for</code>, <code>type</code>, ou <code>href</code></li>
+      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+      <li><code>title</code>, <code>alt</code></li>
+      <li><code>aria-*</code>, <code>role</code></li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"..."</span> <span class="na">id=</span><span class="s">"..."</span> <span class="na">data-modal=</span><span class="s">"toggle"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+  Example link
+<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span><span class="nt">&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-boolean-attributes">
+  <div class="col">
+    <h3>Atributos booleanos</h3>
+    <p>Um atributo boleano é o único que não precisa ter valores declarados. O XHTML precisa que você declare um valor, mas no HTML5 isso não é necessário.</p>
+    <p>Para uma leitura adicional, consulte a <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">seção do WhatWG sobre atributos booleanos</a>:</p>
+    <blockquote>
+      <p>A presença de um atributo boleano representa um valor verdadeiro e a ausência do atributo representa um valor falso.</p>
+    </blockquote>
+    <p>Se você <em>precisa</em> incluir valores nos atributos, <strong>você não precisa</strong> seguir esta regra do WhatWG:</p>
+    <blockquote>
+      <p>Se o atributo está presente, seu valor deve ser uma string vazia ou [...] o nome canônico do atributo, sem espaços em branco.</p>
+    </blockquote>
+    <p>Resumindo, não adicione nenhum valor.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;select&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">selected</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-reducing-markup">
+  <div class="col">
+    <h3>Reduzindo o markup</h3>
+    <p>Sempre que possível, evite elementos pais supérfluos quando escrever HTML. Muitas vezes é necessário uma interação ou refatoração, mas isso produz pouco HTML. Veja o seguinte exemplo:</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Not so great --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- Better --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="html-javascript">
+  <div class="col">
+    <h3>Markup gerado por Javascript</h3>
+    <p>Escrever código em um arquivos Javascript faz com que o conteúdo seja difícil de ser encontrado, difícil de ser editado e o torna menos performático. Evite fazer isso o máximo possível.</p>
+  </div>
+</div>
+
+<div class="heading" id="css">
+  <h2>CSS</h2>
+</div>
+
+<div class="section" id="css-syntax">
+  <div class="col">
+    <h3>Sintaxe do CSS</h3>
+    <ul>
+      <li>Use soft-tabs com dois espaços.</li>
+      <li>Quando agrupar seletores, deixe seletores individuais em uma linha.</li>
+      <li>Inclua um espaço antes de abrir um colchete.</li>
+      <li>Coloque o fechamento do colchete em uma nova linha.</li>
+      <li>Inclua um espaço depois dos dois pontos <code>:</code> em cada declaração de propriedade.</li>
+      <li>Cada declaração deve estar em sua própria linha para encontrarmos melhor os erros.</li>
+      <li>Feche todas as declarações com ponto-vírgula <code>;</code>.</li>
+      <li>Valores separados por vírgula devem incluir um espaço logo depois da vírgula  (ex., <code>box-shadow</code>).</li>
+      <li>Não inclua espaços depois das vírgulas <em>como em</em> cores &lt;<code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code> ou <code>rect()</code>. Isto ajuda a diferenciar múltiplos valores (vírgulas, sem espaço) de cores de propriedades múltiplas (vírgulas, com espaço). Também não coloque valores iniciados com zero (ex., <code>.5</code> em vez de <code>0.5</code>).</li>
+      <li>Deixe todos os valores hexadecimais em caixa baixa, exemplo: <code>#fff</code>. Letras com caixa baixa são mais fáceis de serem lidas e entendidas quando queremos scanear o documento.</li>
+      <li>Valores separados por vírgula devem incluir um espaço logo depois da vírgula.</li>
+      <li>Não inclua espaços depois das vírgulas <em>como em</em> cores <code>rgb()</code> ou <code>rgba()</code> e não inicie valores com zero.</li>
+      <li>Deixe todos os valores hexadecimais em caixa baixa, exemplo: <code>#fff</code>.</li>
+      <li>Use cores em hexadecimal abrevidas quando puder, exemplo: <code>#fff</code> em vez de <code>#ffffff</code>.</li>
+      <li>Coloque aspas nos valores em seletores com atributos, exemplo: <code>input[type="text"]</code>.</li>
+      <li>Evite especificar unidades quando os valores forem 0, exemplo: <code>margin: 0;</code> em vez de  <code>margin: 0px;</code>.</li>
+    </ul>
+    <p>Dúvidas sobre os termos usados aqui? Veja a <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">seção de sintaxe dos CSS</a> na Wikipedia.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Bad CSS */</span>
+<span class="nc">.selector</span><span class="o">,</span> <span class="nc">.selector-secondary</span><span class="o">,</span> <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span><span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span><span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="o">,</span><span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
+<span class="p">}</span>
+
+<span class="c">/* Good CSS */</span>
+<span class="nc">.selector</span><span class="o">,</span>
+<span class="nc">.selector-secondary</span><span class="o">,</span>
+<span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">"text"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">5</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="o">,</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-declaration-order">
+  <div class="col">
+    <h3>Ordem das declarações</h3>
+    <p>Declarações relacionadas devem ser agrupadas segundo a seguinte ordem:</p>
+    <ol>
+      <li>Posicionamento</li>
+      <li>Box model</li>
+      <li>Tipografia</li>
+      <li>Visual</li>
+    </ol>
+    <p>Posicionamento vem primeiro por que isto pode remover um elemento do fluxo normal do documento e substituir estilos relacionados. O box model vem depois pois ele dita as dimensões e lugar do componente.</p>
+    <p>Tudo o mais que toma lugar <em>dentro</em> do componente ou não impacta as duas seções anteriores, vem por último.</p>
+    <p>Para uma lista completa de propridades e suas ordens, por favor veja <a href="http://twitter.github.com/recess">Recess</a>,</p>
+    <p>Declarações relacionadas devem ser agrupadas, colocando posicionamento e as propriedades de box-model perto do topo, seguido das propriedades de tipografia e depois propriedades visuais.</p>
+    <p>Para uma lista completa das propriedades e suas ordens, por favor verifique a página do <a href="http://twitter.github.com/recess">Recess</a>.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.declaration-order</span> <span class="p">{</span>
+  <span class="c">/* Positioning */</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">z-index</span><span class="o">:</span> <span class="m">100</span><span class="p">;</span>
+
+  <span class="c">/* Box-model */</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+
+  <span class="c">/* Typography */</span>
+  <span class="k">font</span><span class="o">:</span> <span class="k">normal</span> <span class="m">13px</span> <span class="s2">"Helvetica Neue"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+
+  <span class="c">/* Visual */</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#f5f5f5</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#e5e5e5</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+
+  <span class="c">/* Misc */</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-media-queries">
+  <div class="col">
+    <h3>Onde colocar as Media Queries</h3>
+    <p>Coloque as Media Queries o mais perto possível de suas regras originais. Não as coloque separadas em outros arquivos ou no final do documento. Se você fizer isso, outros poderão não encontrá-las no futuro. Veja um exemplo típico:</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.element-avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.element-selected</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nc">.element</span> <span class="p">{</span> <span class="o">...</span><span class="p">}</span>
+  <span class="nc">.element-avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+  <span class="nc">.element-selected</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-prefixed-properties">
+  <div class="col">
+    <h3>Propriedades com prefixo</h3>
+    <p>Quando usar prefixos de browsers, idente cada propriedade alinhada verticalmente para facilitar a edição multi-linha.</p>
+    <p>No Textmate, use <strong>Text → Edit Each Line in Selection</strong> (⌃⌘A). No Sublime Text 2, use <strong>Selection → Add Previous Line</strong> (⌃⇧↑) e <strong>Selection → Add Next Line</strong> (⌃⇧↓).</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Prefixed properties */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">15</span><span class="p">);</span>
+          <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">15</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-single-declarations">
+  <div class="col">
+    <h3>Declarações únicas</h3>
+    <p>Em lugares onde são definidas apenas uma linha de propriedade, considere remover as quebras de linha para melhorar a leitura e edição. Considere este exemplo:</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Single declarations on one line */</span>
+<span class="nc">.span1</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">60px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.span2</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">140px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.span3</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">220px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* Multiple declarations, one per line */</span>
+<span class="nc">.sprite</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(../img/sprite.png)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.icon</span>           <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.icon-home</span>      <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-20px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.icon-account</span>   <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span> <span class="m">-40px</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-shorthand">
+  <div class="col">
+    <h3>Propriedades resumidas</h3>
+    <p>Esforce-se muito para usar declarações de propriedades resumidas onde você define todos os valores dessa propriedade. As propriedades resumidas mais usadas incluem:</p>
+    <ul>
+      <li><code>padding</code></li>
+      <li><code>margin</code></li>
+      <li><code>font</code></li>
+      <li><code>background</code></li>
+      <li><code>border</code></li>
+      <li><code>border-radius</code></li>
+    </ul>
+    <p>Frequentemente não precisamos definir todos os valores que uma propriedade representa. Por exemplo, os títulos do HTML tem margens no top e bottom definidas por padrão, então, quando necessário, apenas substitua estes dois valores. O uso excessivo de propriedades resumidas (ou shorthand properties) pode fazer com que o código fique um pouco bagunçado quando substituímos propriedades não utilizadas.</p>
+    <p>O Mozilla Developer Network tem um ótimo artigo em <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> para quem não está familiarizado essa forma de escrever.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Bad example */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="sx">url("image.jpg")</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Good example */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url("image.jpg")</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="o">-</span><span class="k">left</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">border-top</span><span class="o">-</span><span class="k">right</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-nesting">
+  <div class="col">
+    <h3>Aninhamento (nesting) no LESS e SASS</h3>
+    <p>Evite aninhar seletores (fazer "nesting"). Só porque você pode fazer isso, não significa que você deve fazê-lo sempre. Considere aninhar se você tem um escopo de estilos para um pai e se há múltiplos elementos para serem aninhados.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Without nesting</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+
+<span class="c1">// With nesting</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="p">{</span>
+  <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+  <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="heading" id="css-human-readable">
+  <h2>Legível para humanos</h2>
+</div>
+
+<div class="section" id="css-comments">
+  <div class="col">
+    <h3>Comentários</h3>
+    <p>Código é escrito e mantido por pessoas. Certifique-se de que o código é descritivo, bem comentado e amigável para os outros. Grandes pedaços de comentários devem ter contexto e não devem apenas reiterar um nome de classe ou componente.</p>
+    <p>Certifique-se de escrever em sentenças completas ou grandes comentários e frases sucintas para notas gerais.</p>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Bad example */</span>
+<span class="c">/* Modal header */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c">/* Good example */</span>
+<span class="c">/* Wrapping element for .modal-title and .modal-close */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-class-names">
+  <div class="col">
+    <h3>Nomes de classes</h3>
+    <ul>
+      <li>Mantenha as classes em caixa baixa e use traços (não use underscores ou camelCase).</li>
+      <li>Evite usar arbitrariamente notações abreviadas.</li>
+      <li>Mantenha-as pequenas e sucintas ao máximo possível.</li>
+      <li>Use nomes com significado; use nomes ligados à estrutura em vez do visual.</li>
+      <li>Prefixe nomes de classes baseadas nos componentes pais mais próximos.</li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Bad example */</span>
+<span class="nc">.t</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.red</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Good example */</span>
+<span class="nc">.tweet</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.important</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-selectors">
+  <div class="col">
+    <h3>Seletores</h3>
+    <ul>
+      <li>Use classes em vez de nomes de tags.</li>
+      <li>Mantenha os seletores pequenos e limite o número de elementos em no máximo três.</li>
+      <li>Use nomes de classes do elemento pais <strong>somente</strong> quando necessário (ex: quando não usar classes prefixadas).</li>
+    </ul>
+    <p>Leitura adicional:</p>
+    <ul>
+      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Scope CSS classes with prefixes</a></li>
+      <li><a href="http://markdotto.com/2012/03/02/stop-the-cascade/">Stop the cascade</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Bad example */</span>
+<span class="nt">span</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.page-container</span> <span class="nf">#stream</span> <span class="nc">.stream-item</span> <span class="nc">.tweet</span> <span class="nc">.tweet-header</span> <span class="nc">.username</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Good example */</span>
+<span class="nc">.avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="nc">.username</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="nc">.tweet</span> <span class="nc">.avatar</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span></code></pre></div>
+  </div>
+</div>
+
+<div class="section" id="css-organization">
+  <div class="col">
+    <h3>Organização</h3>
+    <ul>
+      <li>Organize seções do código por componentes.</li>
+      <li>Desenvolva uma hierarquia de comentários consistente.</li>
+      <li>Se usar múltiplos arquivos CSS, quebre-os em componentes.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section" id="css-editor-prefs">
+  <div class="col">
+    <h3>Preferências de editor</h3>
+    <p>Defina seu editor com as seguintes configurações para evitar inconsistências comuns no código e diffs sujos:</p>
+    <ul>
+      <li>Use soft-tabs com 2 espaços</li>
+      <li>Apague os espaços em brancos ao salvar</li>
+      <li>Defina o encoding como UTF-8</li>
+      <li>Coloque uma nova linha no final dos arquivos</li>
+    </ul>
+
+    <p>Considere documentar e aplicar estas configurações para o seu projeto com o <code>.editorconfig</code>. Para um exemplo, veja <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">o arquivo utilizado no Bootstrap</a>. Aprenda mais em <a href="http://editorconfig.org/">EditorConfig</a></p>
+  </div>
+</div>
+
+
+    <footer class="footer">
+  <p>Muito inspirado por <a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a> e o <a href="http://github.com/styleguide">GitHub Styleguide</a>. Feito com todo amor do mundo por <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>Open sourced sob MIT. Copyright 2014 <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>Versão em português mantida por <a href="https://twitter.com/diegoeis">@diegoeis</a> e contribuidores <a href="http://github.com/diegoeis/code-guide/">via Github</a>.</p>
+</footer>
+
+</body></html>
