@@ -1,0 +1,246 @@
+<h1 id="git">GIT</h1>
+<h2 id="estados">Estados</h2>
+<ul>
+<li>Modificado (modified);</li>
+<li>Preparado (staged/index)</li>
+<li>Consolidado (comitted);</li>
+</ul>
+<h2 id="ajuda">Ajuda</h2>
+<h5 id="geral">Geral</h5>
+<pre><code>git help</code></pre>
+<h5 id="comando-específico">Comando específico</h5>
+<pre><code>git help add
+git help commit
+git help &lt;qualquer_comando_git&gt;</code></pre>
+<h2 id="configuração">Configuração</h2>
+<h3 id="geral-1">Geral</h3>
+<p>As configurações do GIT são armazenadas no arquivo <strong>.gitconfig</strong> localizado dentro do diretório do usuário do Sistema Operacional (Ex.: /home/user/.gitconfig).</p>
+<p>As configurações realizadas através dos comandos abaixo serão incluídas no arquivo citado acima.</p>
+<h5 id="setar-usuário">Setar usuário</h5>
+<pre><code>git config --global user.name &quot;Leonardo Comelli&quot;</code></pre>
+<h5 id="setar-email">Setar email</h5>
+<pre><code>git config --global user.email leonardo@software-ltda.com.br</code></pre>
+<h5 id="setar-editor">Setar editor</h5>
+<pre><code>git config --global core.editor vim</code></pre>
+<h5 id="setar-ferramenta-de-merge">Setar ferramenta de merge</h5>
+<pre><code>git config --global merge.tool vimdiff</code></pre>
+<h5 id="setar-arquivos-a-serem-ignorados">Setar arquivos a serem ignorados</h5>
+<pre><code>git config --global core.excludesfile ~/.gitignore</code></pre>
+<h5 id="listar-configurações">Listar configurações</h5>
+<pre><code>git config --list</code></pre>
+<h3 id="ignorar-arquivos">Ignorar Arquivos</h3>
+<p>Os nomes de arquivos/diretórios ou extensões de arquivos listados no arquivo <strong>.gitignore</strong> não serão adicionados em um repositório. Existem dois arquivos .gitignore, são eles:</p>
+<ul>
+<li><p>Geral: Normalmente armazenado no diretório do usuário do Sistema Operacional. O arquivo que possui a lista dos arquivos/diretórios a serem ignorados por <strong>todos os repositórios</strong> deverá ser declarado conforme citado acima. O arquivo não precisa ter o nome de <strong>.gitignore</strong>.</p></li>
+<li><p>Por repositório: Deve ser armazenado no diretório do repositório e deve conter a lista dos arquivos/diretórios que devem ser ignorados apenas para o repositório específico.</p></li>
+</ul>
+<h2 id="repositório-local">Repositório Local</h2>
+<h3 id="criar-novo-repositório">Criar novo repositório</h3>
+<pre><code>git init</code></pre>
+<h3 id="verificar-estado-dos-arquivosdiretórios">Verificar estado dos arquivos/diretórios</h3>
+<pre><code>git status</code></pre>
+<h3 id="adicionar-arquivodiretório-staged-area">Adicionar arquivo/diretório (staged area)</h3>
+<h5 id="adicionar-um-arquivo-em-específico">Adicionar um arquivo em específico</h5>
+<pre><code>git add meu_arquivo.txt</code></pre>
+<h5 id="adicionar-um-diretório-em-específico">Adicionar um diretório em específico</h5>
+<pre><code>git add meu_diretorio</code></pre>
+<h5 id="adicionar-todos-os-arquivosdiretórios">Adicionar todos os arquivos/diretórios</h5>
+<pre><code>git add .   </code></pre>
+<h5 id="adicionar-um-arquivo-que-esta-listado-no-.gitignore-geral-ou-do-repositório">Adicionar um arquivo que esta listado no .gitignore (geral ou do repositório)</h5>
+<pre><code>git add -f arquivo_no_gitignore.txt</code></pre>
+<h3 id="comitar-arquivodiretório">Comitar arquivo/diretório</h3>
+<h5 id="comitar-um-arquivo">Comitar um arquivo</h5>
+<pre><code>git commit meu_arquivo.txt</code></pre>
+<h5 id="comitar-vários-arquivos">Comitar vários arquivos</h5>
+<pre><code>git commit meu_arquivo.txt meu_outro_arquivo.txt</code></pre>
+<h5 id="comitar-informando-mensagem">Comitar informando mensagem</h5>
+<pre><code>git commit meuarquivo.txt -m &quot;minha mensagem de commit&quot;</code></pre>
+<h3 id="remover-arquivodiretório">Remover arquivo/diretório</h3>
+<h5 id="remover-arquivo">Remover arquivo</h5>
+<pre><code>git rm meu_arquivo.txt</code></pre>
+<h5 id="remover-diretório">Remover diretório</h5>
+<pre><code>git rm -r diretorio</code></pre>
+<h3 id="visualizar-histórico">Visualizar histórico</h3>
+<h5 id="exibir-histórico">Exibir histórico</h5>
+<pre><code>git log</code></pre>
+<h5 id="exibir-histórico-com-diff-das-duas-últimas-alterações">Exibir histórico com diff das duas últimas alterações</h5>
+<pre><code>git log -p -2</code></pre>
+<h5 id="exibir-resumo-do-histórico-hash-completa-autor-data-comentário-e-qtde-de-alterações--">Exibir resumo do histórico (hash completa, autor, data, comentário e qtde de alterações (+/-))</h5>
+<pre><code>git log --stat</code></pre>
+<h5 id="exibir-informações-resumidas-em-uma-linha-hash-completa-e-comentário">Exibir informações resumidas em uma linha (hash completa e comentário)</h5>
+<pre><code>git log --pretty=oneline</code></pre>
+<h5 id="exibir-histórico-com-formatação-específica-hash-abreviada-autor-data-e-comentário">Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)</h5>
+<pre><code>git log --pretty=format:&quot;%h - %an, %ar : %s&quot;</code></pre>
+<ul>
+<li>%h: Abreviação do hash;</li>
+<li>%an: Nome do autor;</li>
+<li>%ar: Data;</li>
+<li>%s: Comentário.</li>
+</ul>
+<p>Verifique as demais opções de formatação no <a href="http://git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History">Git Book</a></p>
+<h5 id="exibir-histório-de-um-arquivo-específico">Exibir histório de um arquivo específico</h5>
+<pre><code>git log -- &lt;caminho_do_arquivo&gt;</code></pre>
+<h5 id="exibir-histórico-de-um-arquivo-específico-que-contêm-uma-determinada-palavra">Exibir histórico de um arquivo específico que contêm uma determinada palavra</h5>
+<pre><code>git log --summary -S&lt;palavra&gt; [&lt;caminho_do_arquivo&gt;]</code></pre>
+<h5 id="exibir-histórico-modificação-de-um-arquivo">Exibir histórico modificação de um arquivo</h5>
+<pre><code>git log --diff-filter=M -- &lt;caminho_do_arquivo&gt;</code></pre>
+<ul>
+<li>O <D> pode ser substituido por: Adicionado (A), Copiado (C), Apagado (D), Modificado (M), Renomeado (R), entre outros.</li>
+</ul>
+<h5 id="exibir-histório-de-um-determinado-autor">Exibir histório de um determinado autor</h5>
+<pre><code>git log --author=usuario</code></pre>
+<h5 id="exibir-revisão-e-autor-da-última-modificação-de-uma-bloco-de-linhas">Exibir revisão e autor da última modificação de uma bloco de linhas</h5>
+<pre><code>git blame -L 12,22 meu_arquivo.txt </code></pre>
+<h3 id="desfazendo-operações">Desfazendo operações</h3>
+<h5 id="desfazendo-alteração-local-working-directory">Desfazendo alteração local (working directory)</h5>
+<p>Este comando deve ser utilizando enquanto o arquivo não foi adicionado na <strong>staged area</strong>.</p>
+<pre><code>git checkout -- meu_arquivo.txt</code></pre>
+<h5 id="desfazendo-alteração-local-staging-area">Desfazendo alteração local (staging area)</h5>
+<p>Este comando deve ser utilizando quando o arquivo já foi adicionado na <strong>staged area</strong>.</p>
+<pre><code>git reset HEAD meu_arquivo.txt</code></pre>
+<p>Se o resultado abaixo for exibido, o comando reset <em>não</em> alterou o diretório de trabalho.</p>
+<pre><code>Unstaged changes after reset:
+M   meu_arquivo.txt</code></pre>
+<p>A alteração do diretório pode ser realizada através do comando abaixo:</p>
+<pre><code>git checkout meu_arquivo.txt</code></pre>
+<h2 id="repositório-remoto">Repositório Remoto</h2>
+<h3 id="exibir-os-repositórios-remotos">Exibir os repositórios remotos</h3>
+<pre><code>git remote
+
+git remote -v</code></pre>
+<h3 id="vincular-repositório-local-com-um-repositório-remoto">Vincular repositório local com um repositório remoto</h3>
+<pre><code>git remote add origin git@github.com:leocomelli/curso-git.git</code></pre>
+<h3 id="exibir-informações-dos-repositórios-remotos">Exibir informações dos repositórios remotos</h3>
+<pre><code>git remote show origin</code></pre>
+<h3 id="renomear-um-repositório-remoto">Renomear um repositório remoto</h3>
+<pre><code>git remote rename origin curso-git</code></pre>
+<h3 id="desvincular-um-repositório-remoto">Desvincular um repositório remoto</h3>
+<pre><code>git remote rm curso-git</code></pre>
+<h3 id="enviar-arquivosdiretórios-para-o-repositório-remoto">Enviar arquivos/diretórios para o repositório remoto</h3>
+<p>O primeiro <strong>push</strong> de um repositório deve conter o nome do repositório remoto e o branch.</p>
+<pre><code>git push -u origin master</code></pre>
+<p>Os demais <strong>pushes</strong> não precisam dessa informação</p>
+<pre><code>git push</code></pre>
+<h3 id="atualizar-repositório-local-de-acordo-com-o-repositório-remoto">Atualizar repositório local de acordo com o repositório remoto</h3>
+<h5 id="atualizar-os-arquivos-no-branch-atual">Atualizar os arquivos no branch atual</h5>
+<pre><code>git pull</code></pre>
+<h5 id="buscar-as-alterações-mas-não-aplica-las-no-branch-atual">Buscar as alterações, mas não aplica-las no branch atual</h5>
+<pre><code>git fetch</code></pre>
+<h3 id="clonar-um-repositório-remoto-já-existente">Clonar um repositório remoto já existente</h3>
+<pre><code>git clone git@github.com:leocomelli/curso-git.git</code></pre>
+<h3 id="tags">Tags</h3>
+<h5 id="criando-uma-tag-leve">Criando uma tag leve</h5>
+<pre><code>git tag vs-1.1</code></pre>
+<h5 id="criando-uma-tag-anotada">Criando uma tag anotada</h5>
+<pre><code>git tag -a vs-1.1 -m &quot;Minha versão 1.1&quot;</code></pre>
+<h5 id="criando-uma-tag-assinada">Criando uma tag assinada</h5>
+<p>Para criar uma tag assinada é necessário uma chave privada (GNU Privacy Guard - GPG).</p>
+<pre><code>git tag -s vs-1.1 -m &quot;Minha tag assinada 1.1&quot;</code></pre>
+<h5 id="criando-tag-a-partir-de-um-commit-hash">Criando tag a partir de um commit (hash)</h5>
+<pre><code>git tag -a vs-1.2 9fceb02</code></pre>
+<h5 id="criando-tags-no-repositório-remoto">Criando tags no repositório remoto</h5>
+<pre><code>git push origin vs-1.2</code></pre>
+<h5 id="criando-todas-as-tags-locais-no-repositório-remoto">Criando todas as tags locais no repositório remoto</h5>
+<pre><code>git push origin --tags</code></pre>
+<h3 id="branches">Branches</h3>
+<p>O <strong>master</strong> é o branch principal do GIT.</p>
+<p>O <strong>HEAD</strong> é um ponteiro <em>especial</em> que indica qual é o branch atual. Por padrão, o <strong>HEAD</strong> aponta para o branch principal, o <strong>master</strong>.</p>
+<h5 id="criando-um-novo-branch">Criando um novo branch</h5>
+<pre><code>git branch bug-123</code></pre>
+<h5 id="trocando-para-um-branch-existente">Trocando para um branch existente</h5>
+<pre><code>git checkout bug-123</code></pre>
+<p>Neste caso, o ponteiro principal <strong>HEAD</strong> esta apontando para o branch chamado bug-123.</p>
+<h5 id="criar-um-novo-branch-e-trocar">Criar um novo branch e trocar</h5>
+<pre><code>git checkout -b bug-456</code></pre>
+<h5 id="voltar-para-o-branch-principal-master">Voltar para o branch principal (master)</h5>
+<pre><code>git checkout master</code></pre>
+<h5 id="resolver-merge-entre-os-branches">Resolver merge entre os branches</h5>
+<pre><code>git merge bug-123</code></pre>
+<p>Para realizar o <em>merge</em>, é necessário estar no branch que deverá receber as alterações. O <em>merge</em> pode automático ou manual. O merge automático será feito em arquivos textos que não sofreram alterações nas mesmas linhas, já o merge manual será feito em arquivos textos que sofreram alterações nas mesmas linhas.</p>
+<p>A mensagem indicando um <em>merge</em> manual será:</p>
+<pre><code>Automerging meu_arquivo.txt
+CONFLICT (content): Merge conflict in meu_arquivo.txt
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+<h5 id="apagando-um-branch">Apagando um branch</h5>
+<pre><code>git branch -d bug-123</code></pre>
+<h5 id="listar-branches">Listar branches</h5>
+<h6 id="listar-branches-1">Listar branches</h6>
+<pre><code>git branch</code></pre>
+<h6 id="listar-branches-com-informações-dos-últimos-commits">Listar branches com informações dos últimos commits</h6>
+<pre><code>git branch -v</code></pre>
+<h6 id="listar-branches-que-já-foram-fundidos-merged-com-o-master">Listar branches que já foram fundidos (merged) com o <strong>master</strong></h6>
+<pre><code>git branch --merged</code></pre>
+<h6 id="listar-branches-que-não-foram-fundidos-merged-com-o-master">Listar branches que não foram fundidos (merged) com o <strong>master</strong></h6>
+<pre><code>git branch --no-merged</code></pre>
+<h5 id="criando-branches-no-repositório-remoto">Criando branches no repositório remoto</h5>
+<h6 id="criando-um-branch-remoto-com-o-mesmo-nome">Criando um branch remoto com o mesmo nome</h6>
+<pre><code>git push origin bug-123</code></pre>
+<h6 id="criando-um-branch-remoto-com-nome-diferente">Criando um branch remoto com nome diferente</h6>
+<pre><code>git push origin bug-123:new-branch</code></pre>
+<h5 id="baixar-um-branch-remoto-para-edição">Baixar um branch remoto para edição</h5>
+<pre><code>git checkout -b bug-123 origin/bug-123</code></pre>
+<h5 id="apagar-branch-remoto">Apagar branch remoto</h5>
+<pre><code>git push origin:bug-123</code></pre>
+<h3 id="rebasing">Rebasing</h3>
+<p>Fazendo o <strong>rebase</strong> entre um o branch bug-123 e o master.</p>
+<pre><code>git checkout experiment
+
+git rebase master</code></pre>
+<p>Mais informações e explicações sobre o <a href="http://git-scm.com/book/en/Git-Branching-Rebasing">Rebasing</a></p>
+<p>###Stash</p>
+<p>Para alternar entre um branch e outro é necessário fazer o commit das alterações atuais para depois trocar para um outro branch. Se existir a necessidade de realizar a troca sem fazer o commit é possível criar um <strong>stash</strong>. O Stash como se fosse um branch temporário que contem apenas as alterações ainda não commitadas.</p>
+<h5 id="criar-um-stash">Criar um stash</h5>
+<pre><code>git stash</code></pre>
+<h5 id="listar-stashes">Listar stashes</h5>
+<pre><code>git stash list</code></pre>
+<h5 id="voltar-para-o-último-stash">Voltar para o último stash</h5>
+<pre><code>git stash apply</code></pre>
+<h5 id="voltar-para-um-stash-específico">Voltar para um stash específico</h5>
+<pre><code>git stash apply stash@{2}</code></pre>
+<p>Onde <strong>2</strong> é o indíce do stash desejado.</p>
+<h5 id="criar-um-branch-a-partir-de-um-stash">Criar um branch a partir de um stash</h5>
+<pre><code>git stash branch meu_branch</code></pre>
+<h3 id="reescrevendo-o-histórico">Reescrevendo o histórico</h3>
+<h5 id="alterando-mensagens-de-commit">Alterando mensagens de commit</h5>
+<pre><code>git commit --amend -m &quot;Minha nova mensagem&quot;</code></pre>
+<h5 id="alterar-últimos-commits">Alterar últimos commits</h5>
+<p>Alterando os três últimos commits</p>
+<pre><code>git rebase -i HEAD~3</code></pre>
+<p>O editor de texto será aberto com as linhas representando os três últimos commits.</p>
+<pre><code>pick f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added catfile</code></pre>
+<p>Altere para edit os commits que deseja realizar alterações.</p>
+<pre><code>edit f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added catfile</code></pre>
+<p>Feche o editor de texto.</p>
+<p>Digite o comando para alterar a mensagem do commit que foi marcado como <em>edit</em>.</p>
+<pre><code>git commit –amend -m “Nova mensagem”</code></pre>
+<p>Aplique a alteração</p>
+<pre><code>git rebase --continue</code></pre>
+<p><strong>Atenção:</strong> É possível alterar a ordem dos commits ou remover um commit apenas mudando as linhas ou removendo.</p>
+<h5 id="juntando-vários-commits">Juntando vários commits</h5>
+<p>Seguir os mesmos passos acima, porém marcar os commtis que devem ser juntados com **squash*</p>
+<h5 id="remover-todo-histórico-de-um-arquivo">Remover todo histórico de um arquivo</h5>
+<pre><code>git filter-branch --tree-filter &#39;rm -f passwords.txt&#39; HEAD</code></pre>
+<h3 id="bisect">Bisect</h3>
+<p>O bisect (pesquisa binária) é útil para encontrar um commit que esta gerando um bug ou uma inconsistência entre uma sequência de commits.</p>
+<h5 id="iniciar-pequinsa-binária">Iniciar pequinsa binária</h5>
+<pre><code>git bisect start</code></pre>
+<h5 id="marcar-o-commit-atual-como-ruim">Marcar o commit atual como ruim</h5>
+<pre><code>git bisect bad</code></pre>
+<h5 id="marcar-o-commit-de-uma-tag-que-esta-sem-o-buginconsistência">Marcar o commit de uma tag que esta sem o bug/inconsistência</h5>
+<pre><code>git bisect good vs-1.1</code></pre>
+<h5 id="marcar-o-commit-como-bom">Marcar o commit como bom</h5>
+<p>O GIT irá navegar entre os commits para ajudar a indentificar o commit que esta com o problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como <strong>bom</strong>.</p>
+<pre><code>git bisect good</code></pre>
+<h5 id="marcar-o-commit-como-ruim">Marcar o commit como ruim</h5>
+<p>Se o commit estiver com o problema, então ele deverá ser marcado como <strong>ruim</strong>.</p>
+<pre><code>git bisect bad</code></pre>
+<h5 id="finalizar-a-pesquisa-binária">Finalizar a pesquisa binária</h5>
+<p>Depois de encontrar o commit com problema, para retornar para o <em>HEAD</em> utilize:</p>
+<pre><code>git bisect reset</code></pre>
+<h1 id="contribuições">Contribuições</h1>
+<p>Sinta-se a vontade para realizar adicionar mais informações ou realizar correções. Fork me!</p>
+<p><a href="https://gist.github.com/leocomelli/2545add34e4fec21ec16">https://gist.github.com/leocomelli/2545add34e4fec21ec16</a></p>
