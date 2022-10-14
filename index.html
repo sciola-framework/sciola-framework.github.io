@@ -15,8 +15,17 @@
   body {
     margin: 0;
     padding: 0;
+    background-image: url('bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
     font-family: sans;
     text-align: center;
+    font-size: 10pt;
   }
 
   a {
@@ -25,28 +34,123 @@
 
   header {
     background-color: #162D50;
-    color: #ffffff;
-    padding: 50px;
-    font-size: 24pt;
   }
 
   footer {
     background-color: #162D50;
-    color: #ffffff;
-    padding: 20px;
-    font-size: 10pt;
   }
   </style>
 </head>
 <body>
-  <header>
-    Leandro Sciola
+  <header class="mb-5 p-5">
+    <h1>Leandro Sciola</h1>
   </header>
-  <main>
-    <h1>Bem-vindo!</h1>
+  <main class="mx-4">
+    <h2>Bem-vindo!</h2>
+    <hr>
+    <p class="my-4">
+      Desenvolvedor Web Full-Stack com experiência desde o ano de 2001.<br>Graduado em Sistemas de Informação pela Universidade Bandeirante de São Paulo, especializado em programação nas linguagens PHP e JavaScript.
+    </p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-12 col-md-6 bg-primary rounded py-5">
+          <h1>Skills</h1>
+          <hr>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Linguagens de Programação</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">JavaScript</li>
+            <li class="my-4">PHP</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Linguagens de Template</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">EJS</li>
+            <li class="my-4">Twig</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Linguagens de Marcação</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">HTML</li>
+            <li class="my-4">XML</li>
+            <li class="my-4">YAML</li>
+            <li class="my-4">Markdown</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Linguagens de Formatação</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">CSS</li>
+            <li class="my-4">SCSS</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Ferramentas de Desenvolvimento</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">Gedit</li>
+            <li class="my-4">Git</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Aplicações de Imagens</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">Gimp</li>
+            <li class="my-4">Inkscape</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Aplicações de Servidores</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">Apache2</li>
+            <li class="my-4">Nginx</li>
+            <li class="my-4">Node.js</li>
+            <li class="my-4">Docker</li>
+            <li class="my-4">VirtualBox</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Sistema Operacional</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">Linux (Debian) desde 2004</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Banco de Dados</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">MariaDB/MySQL</li>
+            <li class="my-4">MongoDB</li>
+            <li class="my-4">PostgreSQL</li>
+            <li class="my-4">SQLite</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Frameworks e Bibliotecas</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">CodeIgniter</li>
+            <li class="my-4">Bootstrap</li>
+            <li class="my-4">Jquery</li>
+            <li class="my-4">Vue.js</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Metodologias Ágeis</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">Kanban</li>
+            <li class="my-4">Scrum</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Paradigmas, Padrões e Técnicas</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">MVC</li>
+            <li class="my-4">ORM</li>
+            <li class="my-4">Programação Orientada a Objetos</li>
+          </ul>
+          <h5 class="bg-medium text-start text-master rounded my-4 p-2">Plataformas</h5>
+          <ul class="h5 text-start">
+            <li class="my-4">Google Cloud</li>
+            <li class="my-4">GitHub</li>
+            <li class="my-4">NPM</li>
+          </ul>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+    </div>
+    <figure class="bg-secondary rounded mt-4 p-4">
+      <blockquote class="blockquote">
+        <p class="pb-2">
+          <i>"Quando ocupamos nossa mente com coisas que edificam, nos sentimos melhor e edificamos as pessoas ao nosso redor"</i>
+        </p>
+      </blockquote>
+      <figcaption class="blockquote-footer text-light mb-0">
+        Leandro Sciola
+      </figcaption>
+    </figure>
   </main>
-  <footer>
-    <a class="btn btn-primary" href="mailto:leandrosciola@gmail.com">E-mail - Leandro Sciola</a> 
+  <footer class="p-4">
+    <a class="btn btn-success" href="mailto:leandrosciola@gmail.com">E-mail</a> <a class="btn btn-primary" href="https://github.com/leandrosciola">GitHub</a>
   </footer>
 </body>
 </html>
