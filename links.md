@@ -18,6 +18,7 @@
 * [Vimix is a flat Material Design theme for GTK 3, GTK 2 and Gnome-Shell.](https://github.com/vinceliuice/vimix-gtk-themes)
 * [A Material Design icon theme.](https://github.com/vinceliuice/vimix-icon-theme)
 * [Online string tools is a collection of useful string manipulation utilities.](https://onlinestringtools.com)
+* [Managed Cloud Hosting Platform Simplified](https://www.cloudways.com/en/)
 
 ## Multimedia
 
