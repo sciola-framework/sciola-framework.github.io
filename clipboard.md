@@ -2,7 +2,7 @@
 
 [Javascript | DEMO - PROMISE](https://jsfiddle.net/dgvk612x/)
 
-```
+```html
 <script>
 function fnc(arg) {
     return new Promise(function (resolve, reject) {
