@@ -32,7 +32,7 @@
 * [Open SF2 file.](https://plypp-beta.netlify.app)
 * [Audio+Video+Screen Recording using RecordRTC.](https://www.webrtc-experiment.com/RecordRTC/)
 * [Audio Recording Demo With WebAudioRecorder.js.](https://addpipe.com/simple-web-audio-recorder-demo/)
-* [SVG Editor](https://svgedit.netlify.app/editor/index.html)
+* [SVG Edit](https://svgedit.netlify.app/editor/index.html)
 
 ## Business
 
