@@ -8,4 +8,4 @@
 
 * [The lightweight PHP class for detecting mobile devices (including tablets).](http://mobiledetect.net)
 
-## Musical
+## Multimedia
