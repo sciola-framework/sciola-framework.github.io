@@ -1,6 +1,8 @@
 # Clipboard
 
-[Javascript | DEMO - PROMISE](https://jsfiddle.net/dgvk612x/)
+### JS - Promise
+
+[DEMO - PROMISE](https://jsfiddle.net/dgvk612x/)
 
 ```html
 <script>
