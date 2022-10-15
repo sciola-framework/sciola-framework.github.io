@@ -16,6 +16,7 @@
 * [OpenStack is a set of software components that provide common services for cloud infrastructure.](https://www.openstack.org)
 * [Develop, run, store and access Twig code online.](https://twigfiddle.com)
 * [Vimix is a flat Material Design theme for GTK 3, GTK 2 and Gnome-Shell.](https://github.com/vinceliuice/vimix-gtk-themes)
+* [A Material Design icon theme.](https://github.com/vinceliuice/vimix-icon-theme)
 
 ## Multimedia
 
