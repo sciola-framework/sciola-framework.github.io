@@ -1,7 +1,6 @@
-# Favoritos
-### Links de Sites e Ferramentas
----
-## Tecnologia
+# LINKS
+
+## Technology
 
 * [Node.js Unofficial Builds Project.](https://unofficial-builds.nodejs.org/download/release/)
 
@@ -9,4 +8,4 @@
 
 * [The lightweight PHP class for detecting mobile devices (including tablets).](http://mobiledetect.net)
 
-## Música
+## Musical
