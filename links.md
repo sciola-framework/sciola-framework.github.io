@@ -3,10 +3,10 @@
 ---
 ## Tecnologia
 
-* [Node.js Unofficial Builds Project](https://unofficial-builds.nodejs.org/download/release/)
+* [Node.js Unofficial Builds Project.](https://unofficial-builds.nodejs.org/download/release/)
 
-[https://codeguide.co](https://codeguide.co)
+* [Standards for developing consistent, flexible, and sustainable HTML and CSS.](https://codeguide.co)
 
-[http://mobiledetect.net](http://mobiledetect.net)
+* [The lightweight PHP class for detecting mobile devices (including tablets).](http://mobiledetect.net)
 
 ## Música
