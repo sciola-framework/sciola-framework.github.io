@@ -28,6 +28,7 @@
 * [Spokesperson Video - Text to Video.](https://www.movio.la)
 * [Fully Open-sourced Online MIDI Editor.](https://signal.vercel.app/edit)
 * [Drum Machine and Sequencer.](https://patternsketch.com)
+* [Open SF2 file.](https://plypp-beta.netlify.app)
 
 ## Business
 
