@@ -6,7 +6,7 @@
 * [Standards for developing consistent, flexible, and sustainable HTML and CSS.](https://codeguide.co)
 * [The lightweight PHP class for detecting mobile devices (including tablets).](http://mobiledetect.net)
 * [The Twelve-Factor App](https://12factor.net)
-* [JSON Test](http://echo.jsontest.com/demo/book/count/20/total/20)
+* [JSON Test](http://echo.jsontest.com/key/value/one/two/1/2)
 * [Upload to FTP servers the Git way](https://git-ftp.github.io/)
 * [Git - Reference](https://git-scm.com/docs)
 * [Git Cheatsheet](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
