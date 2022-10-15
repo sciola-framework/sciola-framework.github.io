@@ -29,3 +29,17 @@ leandro@sciola:~$ **sass import.scss all.css**
 leandro@sciola:~$ **sass import.scss all.min.css --style compressed**
 
 leandro@sciola:~$ **sass import.scss all.min.css --style compressed --watch**
+
+---
+
+```html
+<script>
+var code = "";
+const prismjs = require("prismjs");
+try {
+    code = prismjs.tokenize(code, prismjs.languages.javascript, "javascript");
+} catch(e) {
+    code = prismjs.highlight(code, prismjs.languages.javascript, "javascript");
+}
+</script>
+```
