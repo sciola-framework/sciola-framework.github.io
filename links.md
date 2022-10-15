@@ -25,6 +25,7 @@
 * [Vocal Remover and Isolation.](https://vocalremover.org)
 * [Vocal Remover.](https://moises.ai)
 * [Spokesperson Video - Text to Video.](https://www.movio.la)
+* [Fully Open-sourced Online MIDI Editor.](https://signal.vercel.app/edit)
 
 ## Business
 
