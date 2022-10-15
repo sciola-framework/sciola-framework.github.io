@@ -11,6 +11,7 @@
 * [Git - Reference](https://git-scm.com/docs)
 * [Git Cheatsheet](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
 * [Google tool to measure the performance of a website.](https://developers.google.com/speed/pagespeed/insights)
+* [Draggable/Movable HTML elements demo page](https://draggable-html-elements.glitch.me/)
 
 ## Multimedia
 
