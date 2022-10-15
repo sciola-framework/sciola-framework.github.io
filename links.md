@@ -8,6 +8,7 @@
 * [The Twelve-Factor App](https://12factor.net)
 * [JSON Test](http://echo.jsontest.com/demo/book/count/20/total/20)
 * [Upload to FTP servers the Git way](https://git-ftp.github.io/)
+* [Git - Reference](https://git-scm.com/docs)
 
 ## Multimedia
 
