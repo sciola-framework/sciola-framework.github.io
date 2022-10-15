@@ -19,7 +19,7 @@
 * [A Material Design icon theme.](https://github.com/vinceliuice/vimix-icon-theme)
 * [Online string tools is a collection of useful string manipulation utilities.](https://onlinestringtools.com)
 * [Managed Cloud Hosting Platform Simplified](https://www.cloudways.com/en/)
-* [JSON API for Testing](https://api.chucknorris.io/jokes/random)
+* [JSON API for testing](https://api.chucknorris.io/jokes/random)
 
 ## Multimedia
 
