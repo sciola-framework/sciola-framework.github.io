@@ -1,0 +1,3 @@
+# AUTO LOGIN DEBIAN 10
+
+sed -i 's/#autologin-user=/autologin-user=debian/g' /etc/lightdm/lightdm.conf && sed -i 's/#autologin-user-timeout=0/autologin-user-timeout=0/g' /etc/lightdm/lightdm.conf
