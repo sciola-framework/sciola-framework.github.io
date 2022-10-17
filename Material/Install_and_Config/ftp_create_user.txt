@@ -1,0 +1,17 @@
+# Cria grupo
+#addgroup userftp
+
+# Cria usuário
+adduser foo -shell /bin/false -home /home/foo -no-create-home
+
+# Adiciona o usuário ao grupo
+adduser foo userftp
+
+# Cria pasta do usuário
+mkdir /home/foo
+
+# Permissão ao usuário na sua pasta
+chown -R foo:foo /home/foo
+
+# Reinicia o servidor de FTP
+/etc/init.d/proftpd restart

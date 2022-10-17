@@ -1,0 +1,11 @@
+To create user for phpMyAdmin:
+------------------------------
+
+root@user:~# mysql -u root
+
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+exit
+
+root@user:~# /etc/init.d/mysql restart

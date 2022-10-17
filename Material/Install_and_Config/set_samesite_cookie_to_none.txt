@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------------
+How to fix "set SameSite cookie to none" warning?
+--------------------------------------------------------------------------------
+
+### Apache2 ### ================================================================
+
+1) Adding the following directive to our Apache VirtualHost configurations:
+
+   <VirtualHost *:80>
+     Header edit Set-Cookie ^(.*)$ "$1; Secure; SameSite=None"
+     DocumentRoot /var/www/site/public
+   </VirtualHost>
+
+2) Enable Apache2 headers module:
+
+   debian@debian:~$ su -
+   root@debian:~# a2enmod headers
+
+3) Restart apache:
+
+   root@debian:~# systemctl restart apache2
+
+### PHP ### ====================================================================
+
+< PHP 7.3
+
+  <?php
+      header('Set-Cookie: cross-site-cookie=name; SameSite=None; Secure');
+  ?>
+
+  <?php
+      setcookie('key', 'value', time()+(7*24*3600), "/; SameSite=None; Secure");
+  ?>
+
+>= PHP 7.3
+
+  <?php
+      setcookie('key', 'value', ['samesite' => 'None', 'secure' => true]);
+  ?>
+--------------------------------------------------------------------------------
