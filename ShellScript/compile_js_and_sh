@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Compiles the javascript file to binary.
+pkg -t node8-linux /path/to/file.js -o /path/to/file/file.bin
+
+# Compiles the shellscript file to binary.
+shc -r -v -f /path/to/file.sh
+gcc /path/to/file.sh.x.c -o /path/to/file.bin
