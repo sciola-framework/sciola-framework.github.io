@@ -1,0 +1,136 @@
+--------------------------------------------------------------------------------
+const twig = require("twig");
+Object.keys(mvc.view.functions).forEach(name => {
+    twig.extendFunction(name, mvc.view.functions[name]);
+});
+Object.keys(mvc.view.filters).forEach(name => {
+    twig.extendFilter(name, mvc.view.filters[name]);
+});
+server.set("twig options", {allow_async: true});
+server.engine("twig", twig.__express);
+if (config.application.dev_mode) {
+    twig.cache(false);
+}
+--------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------
+$("box").css("display", "none");
+$("box").each(function () {
+    if ($(this).html()) {
+        var $bootbox = {};
+        var buttons  = {};
+        var type     = $(this).attr("type");
+        var title    = $(this).attr("title");
+        var options  = $(this).attr("options"); // options="Choice One:1, Choice Two:2, Choice Three:3"
+        var locale   = {
+            CONFIRM: "Confirmar",
+            CANCEL: "Cancelar"
+        };
+        if (type === "alert") {
+            $bootbox = bootbox.alert;
+            buttons  = {
+                ok: {
+                    className: "btn-secondary"
+                }
+            };
+        } else if (type === "confirm") {
+            $bootbox = bootbox.confirm;
+            buttons  = {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> ' + locale.CANCEL,
+                    className: "btn-danger"
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> ' + locale.CONFIRM,
+                    className: "btn-success"
+                }
+            };
+        } else if (type === "dialog") {
+            $bootbox = bootbox.dialog;
+        } else {
+            title = title || "Prompt: " + type;
+            if (options) {
+                options  = options.split(",");
+                var size = options.length;
+                var data = [];
+                for (var i = 0; i < size; i++) {
+                    data = options[i].split(":");
+                    options[i] = {text: data[0], value: data[1]};
+                }
+            }
+            $bootbox = bootbox.prompt;
+            buttons  = {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> ' + locale.CANCEL,
+                    className: "btn-danger"
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> ' + locale.CONFIRM,
+                    className: "btn-success"
+                }
+            };
+        }
+        $bootbox({
+            title: title,
+            inputType: type,
+            inputOptions: options,
+            message: $(this).html(),
+            value: ($(this).attr("value")) ? $(this).attr("value").replace(/ /g,"").split(",") : 0,
+            className: $(this).attr("class"),
+            multiple: ($(this).attr("multi") === "true") ? true : false,
+            centerVertical: ($(this).attr("center") === "false") ? false : true,
+            backdrop: ($(this).attr("backdrop") === "true") ? true : undefined,
+            closeButton: ($(this).attr("close") === "false") ? false : true,
+            size: $(this).attr("size"),
+            buttons: buttons,
+            callback: function (result) {
+                if (typeof box === "function") {
+                    box(result);
+                }
+            }
+        });
+    }
+});
+--------------------------------------------------------------------------------
+
+
+
+
+/*
+| ------------------------------------------------------------------------------
+| Includes Controllers and Models
+| ------------------------------------------------------------------------------
+*/
+function include(module, layer, file) {
+    var class_path = MOD_PATH + "/" + module + "/layers/" + layer,
+        cache_path = CACHE_PATH + "/layers/" + layer + "/" + module,
+        cache_file = cache_path + "/" + file + ".js";
+    if (config.application.dev_mode === true) {
+        $("file").remove(cache_file);
+        if (require.cache[cache_file]) {
+            delete require.cache[cache_file];
+        }
+    }
+    if (!$("file").exists(cache_file)) {
+        const terser = require("terser");
+        file = $("file").read(class_path + "/" + file + ".js");
+        file = file.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, "");
+        var src = "",
+            inc = file.match(/include\((\".*\"|\'.*\')\)(\;|)/g);
+        if (inc) {
+            inc.forEach(file => {
+                file = file.replace(/include\(["']|['"]\)(\;|)/g, "");
+                src += $("file").read(class_path + "/" + file);
+            });
+        }
+        src += "module.exports=" + file.replace(/include\(.*\)(\;|)/g, "");
+        $("directory").create(cache_path);
+        $("file").create(cache_file, terser.minify(src).code);
+    }
+    file = require(cache_file);
+    return new file;
+}
+--------------------------------------------------------------------------------
