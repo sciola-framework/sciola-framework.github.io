@@ -1,0 +1,9 @@
+# Quaisquer mensagens de erro serão enviadas para o stderr, que é o output padrão de erros do shell. O strerr é identificado pelo número 2 quando se quer fazer alguma ação com esses erros.
+# Assim, suponhamos que sua cron faz uma chamada do tipo:
+backup.sh
+
+# Vamos alterar essa chamada para gravar os erros em um log:
+backup.sh 2>/var/log/backup.log
+
+# Em seguida, você pode programar uma cron para pegar as mensagens do log de 1 em 1 minuto e enviá-las para um email:
+mail -s "backup" seu@email.com < /var/log/backup.log
