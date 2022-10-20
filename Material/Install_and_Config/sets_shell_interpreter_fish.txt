@@ -1,0 +1,7 @@
+--------------------------------------------------------------------------------
+# Sets the [ fish ] interpreter as default.
+chsh -s /usr/bin/fish
+--------------------------------------------------------------------------------
+# In case of "pam" error Open the file "/etc/pam.d/chsh" and comment out the line:
+auth       required   pam_shells.so
+--------------------------------------------------------------------------------
