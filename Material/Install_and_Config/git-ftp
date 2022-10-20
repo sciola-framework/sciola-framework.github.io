@@ -1,0 +1,21 @@
+git-ftp - (Linux/Debian)
+
+# apt install git-ftp
+
+1) Set up a user by typing:
+git config git-ftp.user 'FTPUserName'
+
+2) Configure your server's FTP path:
+git config git-ftp.url ftp.example.net/public_html/optional1
+/optional2
+
+NOTE: It is interesting to inform the root folder of your server, ex: public_html.
+You can enter as many subdirectories as you want:
+/optional1
+/optional2
+
+3) Set up a password:
+git config git-ftp.password 'yourFTPPassword'
+
+4) When submitting the project for the first time to your server you should run:
+git ftp init
