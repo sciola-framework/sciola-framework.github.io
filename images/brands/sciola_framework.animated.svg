@@ -49,12 +49,12 @@
 					justify-content: center;
 					margin: 0;
 					padding: 10px;
-					width: 100%;
+					width: auto;
 					height: 80px;
-					background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
+					background: linear-gradient(-45deg, #ff7800, #1a5fb4, #162d50);
 					background-size: 600% 400%;
-					animation: gradientBackground 5s ease infinite;
-					border-radius: 5px;
+					animation: gradientBackground 4s ease infinite;
+					border-radius: 0;
 					color: white;
 					text-align: center;
 				}
