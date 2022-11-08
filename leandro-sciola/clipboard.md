@@ -1,6 +1,5 @@
 # Clipboard
 
----
 ### GIT
 ---
 
