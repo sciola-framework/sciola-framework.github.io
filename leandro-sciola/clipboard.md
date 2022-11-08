@@ -1,5 +1,37 @@
 # Clipboard
 
+---
+### GIT
+---
+
+leandro@sciola:~$ **git clone https://github.com/sciola-framework/sciola-framework.github.io**
+
+leandro@sciola:~$ **git remote set-url origin https://<token>@github.com/sciola-framework/sciola-framework.github.io**
+
+********************************************************************************
+
+leandro@sciola:~$ **git tag -d v1.1.2**
+
+leandro@sciola:~$ **git push --delete origin v1.1.2**
+
+leandro@sciola:~$ **GIT_COMMITTER_DATE="2021-08-10 12:00"**
+
+leandro@sciola:~$ **git tag -a v1.1.2 -m "v1.1.2"**
+
+leandro@sciola:~$ **git push --tags origin main**
+
+********************************************************************************
+
+leandro@sciola:~$ **git status**
+
+leandro@sciola:~$ **git add .**
+
+leandro@sciola:~$ **git commit -m "Description..."**
+
+leandro@sciola:~$ **git push origin main**
+
+---
+
 ### JS - Promise
 
 [DEMO - PROMISE](https://jsfiddle.net/dgvk612x/)
