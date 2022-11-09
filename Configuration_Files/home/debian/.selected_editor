@@ -1,2 +1,2 @@
-# Midnight Commander - Default editor
+# Midnight Commander - Default editor - debian@debian:~$ select-editor
 SELECTED_EDITOR="/bin/micro"
