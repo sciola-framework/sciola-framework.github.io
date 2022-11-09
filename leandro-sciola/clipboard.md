@@ -1,5 +1,28 @@
 # Clipboard
 
+### OEmbed
+---
+
+https://noembed.com
+
+https://github.com/leedo/noembed
+
+https://github.com/ricardofiorani/oembed - OEmbed is a PHP library to assist you retrieving data from providers that supports OEmbed.
+It was built to be a successor of ricardofiorani/php-video-url-parser
+
+```php
+<?php
+
+function embed($url) {
+    header('Content-Type: application/json; charset=utf-8');
+    return file_get_contents("https://noembed.com/embed?url=$url");
+}
+
+echo embed('http://www.youtube.com/watch%3Fv%3DbDOYN-6gdRE'); // Print video data in JSON format.
+
+?>
+```
+
 ### GIT
 ---
 
