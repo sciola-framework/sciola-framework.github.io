@@ -1,5 +1,64 @@
 # Clipboard
 
+### Video download
+---
+
+```php
+<?php
+
+function download($title, $url, $format, $extension) {
+    switch ($extension) {
+      case 'm4a':
+        $type = 'audio/m4a';
+        break;
+      case 'm4v':
+        $type = 'video/mp4';
+        break;
+      case 'mp4':
+        $type = 'video/mp4';
+        break;
+      case 'webm':
+        $type = 'video/webm';
+        break;
+      case 'flv':
+        $type = 'video/x-flv';
+        break;
+      case 'mov':
+        $type = 'video/quicktime';
+        break;
+      case 'oga':
+        $type = 'audio/ogg';
+        break;
+      case 'ogv':
+        $type = 'video/ogg';
+        break;
+      case 'ogg':
+        $type = 'application/ogg';
+        break;
+      case 'avi':
+        $type = 'video/x-msvideo';
+        break;
+      case 'wav':
+        $type = 'audio/x-wav';
+        break;
+      default:
+        $type = 'video/mpeg';
+    }
+    header('Pragma: public');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Cache-Control: public');
+    header('Content-Description: File Transfer');
+    header("Content-type: $type");
+    header('Content-Disposition: attachment; filename="' .
+    rawurlencode($title) . '.' . $extension . '"');
+    echo readFile("https://foo.demo/download?url=$url&format=$format");
+    exit;
+}
+
+?>
+```
+
 ### OEmbed
 ---
 
