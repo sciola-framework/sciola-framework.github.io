@@ -1,0 +1,11 @@
+#!/bin/sh
+# [Gedit Tool]
+# Name=Minifier
+# Input=nothing
+# Output=output-panel
+# Applicability=all
+# Save-files=nothing
+# Languages=css
+# Shortcut=F12
+
+/home/debian/.config/gedit/minifier.sh css
