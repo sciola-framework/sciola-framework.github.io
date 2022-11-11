@@ -1,4 +1,18 @@
 --------------------------------------------------------------------------------
+Include multiple JS files via Twig.
+<script type="text/javascript">
+var arr = [];
+{% for file in js %}
+    arr.push("{{ file }}");
+{% endfor %}
+$_["file"].include(arr);
+</script>
+--------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------
 const twig = require("twig");
 Object.keys(mvc.view.functions).forEach(name => {
     twig.extendFunction(name, mvc.view.functions[name]);
