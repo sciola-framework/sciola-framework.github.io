@@ -1,3 +1,0 @@
-HABILITAR PROTOCOLOS FTP E SMB NO THUNAR (XFCE)
-
-# apt-get install fusesmb gvfs-backends
