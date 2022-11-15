@@ -1,6 +1,8 @@
 body {
-  margin: 0;
-  padding: 0;
+  font-family: sans !important;
+}
+
+.bg-img-master {
   background-color: #3f4d67 !important;
   background-image: url('/images/backgrounds/gadgets.jpg') !important;
   background-attachment: fixed !important;
@@ -9,13 +11,14 @@ body {
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
-  color: #ffffff !important;
-  font-family: sans !important;
-  text-align: center !important;
 }
 
 .bg-master {
   background-color: #162D50 !important;
+}
+
+.anchor {
+  display: none;
 }
 
 .opacity {
