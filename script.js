@@ -1,4 +1,8 @@
-var route = {"https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
+var route = {};
+
+$.getJSON("routes.json", function (json) {
+    route = json;
+});
 
 function ajax(url) {
     $.ajax({
