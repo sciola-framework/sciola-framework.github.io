@@ -14,11 +14,11 @@ function ajax(url) {
 }
 
 function router(e) {
-    alert($(location).attr("path"));
-    let path = $(location).attr("path");
-    if (route[path]) {
+    alert(window.location.hash);
+    let hash = window.location.hash;
+    if (route[hash]) {
         $("main").html('<div class="text-center text-white bg-primary rounded fs-4 w-100 m-0 p-4">Loading...</div>');
-        return ajax(route[path]);
+        return ajax(route[hash]);
     }
 }
 
