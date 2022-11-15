@@ -42,7 +42,7 @@
         $("main").html('<div class="bg-white rounded w-100 m-0 p-4">' + data + '</div>');
     });
   }
-  $("body").on("load", function () {
+  $(document).on("load", function () {
     if ($(location).attr('href') === 'https://sciola-framework.github.io/#doc') {
       ajax('https://api.github.com/repos/sciola-framework/documentation/contents/index.md');
     }
