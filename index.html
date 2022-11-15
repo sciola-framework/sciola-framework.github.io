@@ -43,8 +43,8 @@
     });
   }
   $(document).ready(function () {
-      $(this).on("change", function () {
-        alert($(location).attr("href"));
+      $(this).on("ready", function () {
+          alert($(location).attr("href"));
           if ($(location).attr("href") === "https://sciola-framework.github.io/#doc") {
               ajax("https://api.github.com/repos/sciola-framework/documentation/contents/index.md");
           }
