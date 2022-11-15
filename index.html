@@ -34,20 +34,20 @@
   <link href="/style.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script>
-  var routes = {
-    "https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
+  var route = {
+    "/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
   function ajax(url) {
     $.ajax({
       url: url,
-      headers: {'Accept': 'application/vnd.github.html'}
+      headers: {"Accept": "application/vnd.github.html"}
     }).done(function(data) {
         $("main").html('<div class="bg-white rounded w-100 m-0 p-4">' + data + '</div>');
     });
   }
   function router(e) {
-      if (routes[$(location).attr("href")]) {
-        alert(1)
-          ajax(routes[$(location).attr("href")]);
+      let url = "https://sciola-framework.github.io" + $(location).attr("href");
+      if (route[url]) {
+          return ajax(route[url]);
       }
   }
   window.addEventListener("load", router);
