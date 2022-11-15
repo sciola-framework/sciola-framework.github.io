@@ -34,9 +34,9 @@
   <link href="/style.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script>
-  var route = {
-    "/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
-  function ajax(url) {
+  var $route = {
+    "https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
+  function route(url) {
     $.ajax({
       url: url,
       headers: {"Accept": "application/vnd.github.html"}
@@ -45,9 +45,9 @@
     });
   }
   function router(e) {
-      let url = "https://sciola-framework.github.io" + $(location).attr("href");
-      if (route[url]) {
-          return ajax(route[url]);
+      let url = $(location).attr("href");
+      if ($route[url]) {
+          return ajax($route[url]);
       }
   }
   window.addEventListener("load", router);
@@ -99,7 +99,7 @@
               </a>
             </div>-->
             <div class="col-12 m-0 p-2">
-              <a class="btn btn-outline-light text-hover shadow fs-5 w-100 w-md-50 h-100 m-0 p-4" href="#" onclick="ajax('https://api.github.com/repos/sciola-framework/documentation/contents/index.md'); return false;">
+              <a class="btn btn-outline-light text-hover shadow fs-5 w-100 w-md-50 h-100 m-0 p-4" href="#" onclick="route('https://sciola-framework.github.io/#doc'); return false;">
                 <i class="fa fa-book fa-xl mb-4" aria-hidden="true"></i><br>
                 Reference
               </a>
