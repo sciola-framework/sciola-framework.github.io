@@ -1,8 +1,4 @@
-var $route = {"https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
-
-function route(url) {
-    return ajax($route[url]);
-}
+var route = {"https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
 
 function ajax(url) {
     $.ajax({
@@ -15,8 +11,9 @@ function ajax(url) {
 
 function router(e) {
     let url = $(location).attr("href");
-    if ($route[url]) {
-        return ajax($route[url]);
+    if (route[url]) {
+        $("main").html('<div class="text-center bg-white rounded fs-2 w-100 m-0 p-4">Loading...</div>');
+        return ajax(route[url]);
     }
 }
 
