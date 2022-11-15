@@ -36,7 +36,7 @@
   <script>
   var $route = {
     "https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
-  function route(url) {
+  function ajax(url) {
     $.ajax({
       url: url,
       headers: {"Accept": "application/vnd.github.html"}
@@ -99,7 +99,7 @@
               </a>
             </div>-->
             <div class="col-12 m-0 p-2">
-              <a class="btn btn-outline-light text-hover shadow fs-5 w-100 w-md-50 h-100 m-0 p-4" href="#" onclick="route('https://sciola-framework.github.io/#doc'); return false;">
+              <a class="btn btn-outline-light text-hover shadow fs-5 w-100 w-md-50 h-100 m-0 p-4" href="#" onclick="ajax('https://sciola-framework.github.io/#doc'); return false;">
                 <i class="fa fa-book fa-xl mb-4" aria-hidden="true"></i><br>
                 Reference
               </a>
