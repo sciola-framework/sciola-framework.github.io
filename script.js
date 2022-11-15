@@ -22,5 +22,9 @@ function router(e) {
     }
 }
 
+$(document).ready(function (e) {
+    router(e);
+});
+
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
