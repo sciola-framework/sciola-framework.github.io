@@ -1,15 +1,15 @@
 var route = {};
 
-$.getJSON("routes.json", function (json) {
+$.getJSON("/routes.json", function (json) {
     route = json;
 });
 
 function ajax(url) {
     $.ajax({
-    url: url,
+      url: url,
       headers: {"Accept": "application/vnd.github.html"}
     }).done(function(data) {
-      $("main").html('<div class="bg-white rounded w-100 m-0 p-4">' + data + '</div>');
+        $("main").html('<div class="bg-white rounded w-100 m-0 p-4">' + data + '</div>');
     });
 }
 
@@ -22,6 +22,6 @@ function router(e) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", router);
+window.addEventListener("DOMContentLoaded", router);
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
