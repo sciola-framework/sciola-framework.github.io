@@ -14,6 +14,7 @@ function ajax(url) {
 }
 
 function router(e) {
+    alert($(location).attr("pathname"));
     let path = $(location).attr("pathname");
     if (route[path]) {
         $("main").html('<div class="text-center text-white bg-primary rounded fs-4 w-100 m-0 p-4">Loading...</div>');
