@@ -35,7 +35,7 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script>
   var routes = {
-    "https://sciola-framework.github.io/doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
+    "https://sciola-framework.github.io/#doc" : "https://api.github.com/repos/sciola-framework/documentation/contents/index.md"};
   function ajax(url) {
     $.ajax({
       url: url,
@@ -47,7 +47,7 @@
   function router(e) {
       if (routes[$(location).attr("href")]) {
         alert(1)
-          //ajax(routes[$(location).attr("href")]);
+          ajax(routes[$(location).attr("href")]);
       }
   }
   window.addEventListener("load", router);
