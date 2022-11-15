@@ -39,7 +39,7 @@
       url: url,
       headers: {'Accept': 'application/vnd.github.html'}
     }).done(function(data) {
-        $("main").html(data);
+        $("main").html('<div class="bg-white p-4">' + data + '</div>');
     });
   }
   </script>
