@@ -12,7 +12,7 @@ function ajax(url) {
 function router(e) {
     let url = $(location).attr("href");
     if (route[url]) {
-        $("main").html('<div class="text-center bg-white rounded fs-2 w-100 m-0 p-4">Loading...</div>');
+        $("main").html('<div class="text-center text-white bg-master rounded fs-4 w-100 m-0 p-4">Loading...</div>');
         return ajax(route[url]);
     }
 }
