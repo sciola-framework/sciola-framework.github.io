@@ -12,7 +12,7 @@ function router(e) {
     if (route[path]) {
         $("main").html('<div class="text-center text-white bg-primary rounded fs-5 w-100 m-4 p-4">Loading...</div>');
         e.preventDefault();
-        return ajax(route[path]);
+        return ajax(route["/"] + route[path]);
     }
     return false;
 }
