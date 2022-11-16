@@ -14,7 +14,7 @@ function router(e) {
         e.preventDefault();
         return ajax(route[path]);
     }
-    return false;
+    return ajax(route[0]);
 }
 
 window.addEventListener("load", router);
