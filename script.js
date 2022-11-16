@@ -8,7 +8,7 @@ function ajax(url) {
 }
 
 function router(e) {
-    let path = window.location.href.split(window.location.origin)[1];
+    let path = window.location.href.split(window.location.origin)[1].replace(/\/+$/, "");
     if (route[path]) {
         $("main").html('<div class="text-center text-white bg-primary rounded fs-5 m-4 p-4">Loading...</div>');
         e.preventDefault();
