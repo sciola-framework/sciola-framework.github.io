@@ -4,6 +4,7 @@ function ajax(url) {
       headers: {"Accept": "application/vnd.github.html"}
     }).done(function(data) {
         $("#ajax").html(data);
+        hljs.highlightAll();
     });
 }
 
@@ -19,4 +20,3 @@ function router(e) {
 
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
-hljs.highlightAll();
