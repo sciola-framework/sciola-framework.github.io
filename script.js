@@ -19,3 +19,4 @@ function router(e) {
 
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
+hljs.highlightAll();
