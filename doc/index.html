@@ -50,9 +50,11 @@
   <script src="/route.js"></script>
   <script src="/script.min.js"></script>
   <script>
-    $("document").ready(function () {
-        hljs.highlightAll();
-    });
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+});
   </script>
 </head>
 <body>
