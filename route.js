@@ -16,7 +16,7 @@ var route = {
   "/doc/#ajax" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/ajax.html",
   "/doc/#css" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/css.html",
   "/doc/#js" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/js.html",
-  "/doc/#filters" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/filters.html",
-  "/doc/#functions" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/functions.html",
-  "/doc/#layout" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/layout.html"
+  "/doc/#filters" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/filters.html",
+  "/doc/#functions" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/functions.html",
+  "/doc/#layout" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/layout.html"
 }
