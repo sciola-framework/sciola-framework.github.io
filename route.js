@@ -13,9 +13,9 @@ var route = {
   "/doc/#routes" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/directory_structure/routes.html",
   "/doc/#tests" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/directory_structure/tests.html",
   "/doc/#writable" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/directory_structure/writable.html",
-  "/doc/#ajax" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/ajax.html",
-  "/doc/#css" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/css.html",
-  "/doc/#js" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/js.html",
+  "/doc/#ajax" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/front_end/ajax.html",
+  "/doc/#css" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/front_end/css.html",
+  "/doc/#js" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/front_end/js.html",
   "/doc/#filters" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/filters.html",
   "/doc/#functions" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/functions.html",
   "/doc/#layout" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/layout.html"
