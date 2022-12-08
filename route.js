@@ -19,5 +19,5 @@ var route = {
   "/doc/#filters" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/filters.html",
   "/doc/#functions" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/functions.html",
   "/doc/#layout" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/twig/layout.html",
-  "/doc/#orm-demo" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/orm/demo.html"
+  "/doc/#orm-example" : "https://raw.githubusercontent.com/sciola-framework/documentation/main/framework/orm/example.html"
 }
